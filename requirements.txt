@@ -5,3 +5,9 @@ seaborn
 numpy
 scikit-learn
 xgboost
+langchain
+openai
+langchain_openai
+python-dotenv
+langchain.tools
+langchain_core
