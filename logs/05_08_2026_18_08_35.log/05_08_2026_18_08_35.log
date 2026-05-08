@@ -1,0 +1,3 @@
+[ 2026-05-08 18:08:35,314 ] 29 root - INFO - Entered the data ingestion method
+[ 2026-05-08 18:08:35,333 ] 35 root - INFO - Dataset loaded successfully
+[ 2026-05-08 18:08:35,357 ] 41 root - INFO - Train Test Split initiated

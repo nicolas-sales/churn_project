@@ -4,3 +4,6 @@
 ./venvchurn
 venvchurn
 .env
+
+./logs
+./artifacts
