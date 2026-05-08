@@ -11,3 +11,4 @@ langchain_openai
 python-dotenv
 langchain.tools
 langchain_core
+shap

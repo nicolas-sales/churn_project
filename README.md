@@ -1,142 +1,320 @@
-# Customer Churn Prediction and Agentic Recommendation System
+# Customer Churn Prediction and AI Recommendation Agent
 
 ## Overview
 
-This project focuses on predicting customer churn in a telecommunications dataset and building a decision-support agent that provides actionable business recommendations.
+This project focuses on predicting customer churn in a telecommunications company and building an AI-powered decision support agent capable of generating actionable retention strategies.
 
-The system goes beyond standard machine learning by combining:
+The system combines:
 
-- A predictive churn model
-- Scenario simulation (what-if analysis)
-- A rule-based agent that generates business recommendations based on customer profiles
+- Machine learning for churn prediction
+- SHAP explainability for identifying churn drivers
+- Counterfactual simulations for what-if analysis
+- A LangChain agent orchestrating predictions, explanations, simulations, and business recommendations
 
-The goal is to move from pure prediction to actionable insights.
+The objective is to move beyond static prediction and provide interpretable, business-oriented retention insights.
+
+---
 
 ## Objectives
 
-- Predict the probability of customer churn
-- Identify key drivers of churn
-- Simulate the impact of changes in customer attributes
-- Provide business-oriented recommendations through an intelligent agent
+The project aims to:
+
+- Predict customer churn probability
+- Explain the main drivers behind each prediction
+- Simulate the impact of business actions on churn risk
+- Generate prioritized retention recommendations
+- Build an AI agent capable of reasoning over customer profiles
+
+---
 
 ## Dataset
 
-The dataset used is the Telco Customer Churn dataset, which includes:
+The project uses the Telco Customer Churn dataset.
 
-- Customer demographics (gender, SeniorCitizen, Partner, Dependents)
-- Account information (tenure, Contract, PaymentMethod, PaperlessBilling)
-- Services subscribed (InternetService, TechSupport, StreamingTV, etc.)
-- Billing information (MonthlyCharges, TotalCharges)
-- Target variable: Churn
+The dataset contains:
 
-## Methodology
+### Customer Demographics
 
-1. Data Preparation
+- Gender
+- SeniorCitizen
+- Partner
+- Dependents
 
-Converted TotalCharges to numeric
-Removed missing values
-Encoded categorical variables using one-hot encoding
-Split data into train and test sets
-Applied StandardScaler for feature scaling
+### Account Information
 
-2. Modeling
+- Tenure
+- Contract type
+- Payment method
+- Paperless billing
 
-Several models were tested:
+### Subscribed Services
 
-Logistic Regression
-Random Forest
-Gradient Boosting
-XGBoost
+- Internet service
+- Online security
+- Online backup
+- Device protection
+- Technical support
+- Streaming services
 
-Final model selected:
+### Billing Information
 
-Logistic Regression with class_weight="balanced"
+- Monthly charges
+- Total charges
 
-Reason:
+### Target Variable
 
-Better recall on churn class
-Stable performance
-Interpretable
+- Churn
 
-3. Evaluation
+---
 
-Key metrics:
+## Project Architecture
 
-Recall (churn class) prioritized
-ROC-AUC
-Precision / Recall trade-off
+The system is composed of four main layers:
 
-Example result:
+### 1. Predictive Machine Learning Model
 
-Recall (churn): ~0.79
-ROC-AUC: ~0.83
+A supervised classification model predicts churn probability.
 
-This ensures most churners are correctly identified.
+### 2. Explainability Layer
 
-4. Model Persistence
+SHAP values are used to explain the main drivers behind churn predictions.
 
-The following components are saved:
+### 3. Simulation Engine
 
-Trained model (model.pkl)
-Scaler (scaler.pkl)
-Feature columns (features.pkl)
+Counterfactual simulations estimate how changes in customer features impact churn probability.
 
-This allows consistent predictions in production.
+### 4. AI Agent Layer
 
-## Simulation (What-if Analysis)
+A LangChain agent orchestrates:
 
-A simulation function allows testing how changes in customer attributes affect churn probability.
+- churn prediction
+- SHAP explanation
+- business recommendations
+- scenario simulations
 
-Example:
+---
 
-Increasing tenure
-Changing contract type
-Modifying pricing
+## Data Preparation
 
-This enables business-oriented analysis such as:
+The preprocessing pipeline includes:
 
-"What happens if we offer a long-term contract?"
-"How does pricing impact churn risk?"
+### Data Cleaning
 
-## Agent Design
+- Converted `TotalCharges` to numeric
+- Removed missing values
 
-The agent is designed to provide structured recommendations based on:
+### Feature Engineering
 
-Customer context (non-actionable features)
-Key churn drivers (insights)
-Business actions (recommendations)
+- Separation of numerical and categorical variables
+- One-hot encoding for categorical features
+- Standard scaling for numerical features
 
-## Key Principles
+### Train/Test Split
 
-Uses raw business features (not encoded variables)
-Separates diagnosis from decision
-Keeps recommendations consistent
-Adjusts urgency based on churn probability
+- Stratified train-test split
+
+### Preprocessing Pipeline
+
+A `ColumnTransformer` pipeline was used to ensure consistent preprocessing during both training and inference.
+
+---
+
+## Modeling
+
+Several machine learning models were evaluated:
+
+- Logistic Regression
+- Random Forest
+- Gradient Boosting
+- AdaBoost
+- XGBoost
+- Decision Tree
+
+The final selected model was:
+
+### Logistic Regression with `class_weight="balanced"`
+
+### Reasons for Selection
+
+- Strong recall performance on churn class
+- Stable ROC-AUC score
+- Good interpretability
+- Fast inference
+- Compatibility with SHAP explanations
+
+---
+
+## Model Evaluation
+
+The evaluation focused primarily on identifying churners correctly.
+
+### Main Metrics
+
+- Recall
+- Precision
+- F1-score
+- ROC-AUC
+
+### Final Performance
+
+- Recall (churn class): approximately 0.79
+- ROC-AUC: approximately 0.83
+
+The model prioritizes recall to reduce false negatives and better identify customers at risk of leaving.
+
+---
+
+## SHAP Explainability
+
+SHAP (SHapley Additive exPlanations) was integrated to explain individual churn predictions.
+
+The explainability layer identifies:
+
+- which features increase churn risk
+- which features reduce churn risk
+- the relative importance of each feature for a specific customer
+
+### Example Churn Drivers
+
+- Month-to-month contract
+- Low tenure
+- High monthly charges
+- Lack of technical support
+
+This allows the system to generate more reliable and interpretable recommendations.
+
+---
+
+## Counterfactual Simulations
+
+The simulation engine performs what-if analysis by modifying customer attributes and recomputing churn probability.
+
+### Examples
+
+- Switching from month-to-month to one-year contract
+- Adding technical support
+- Reducing monthly charges
+
+This enables quantitative evaluation of retention strategies.
+
+### Example Result
+
+- Churn probability reduced from 66.9% to 47% after changing contract type to one year.
+
+---
+
+## AI Agent Design
+
+The project includes a LangChain-based AI agent capable of orchestrating multiple tools.
+
+### Agent Responsibilities
+
+- Predict churn probability
+- Explain churn drivers using SHAP
+- Generate business recommendations
+- Simulate retention actions
+- Rank actions by expected impact
+
+### Tools Used
+
+- `predict_churn`
+- `explain_prediction`
+- `recommend_action`
+- `simulate_change`
+
+### Agent Workflow
+
+The agent follows the workflow:
+
+1. Predict churn probability
+2. Explain prediction drivers using SHAP
+3. Generate retention recommendations
+4. Simulate high-impact actions
+5. Produce a business-oriented synthesis
+
+---
 
 ## Recommendation Logic
 
-The agent:
+The recommendation engine combines:
 
-Identifies risk factors such as:
-Low tenure
-Month-to-month contract
-Lack of support services
-High monthly charges
+- model predictions
+- SHAP explanations
+- business rules
+- simulation results
 
-Generates actions such as:
-Offer long-term contracts
-Provide discounts or bundles
-Promote support services
-Improve onboarding
+### Typical Recommendations
 
-Adjusts urgency:
-Churn Probability	Behavior
-> 0.7 : Urgent actions
-0.4 – 0.7 : Preventive actions
-< 0.4 : Monitoring only
+- Offer long-term contracts
+- Improve onboarding experience
+- Promote technical support services
+- Offer bundled services
+- Improve customer engagement
+
+### Risk Prioritization
+
+| Churn Probability | Risk Level |
+|---|---|
+| > 0.70 | High Risk |
+| 0.40 – 0.70 | Medium Risk |
+| < 0.40 | Low Risk |
+
+---
+
+## Technologies Used
+
+### Machine Learning
+
+- Scikit-learn
+- XGBoost
+
+### Explainability
+
+- SHAP
+
+### AI Agent Framework
+
+- LangChain
+
+### Data Processing
+
+- Pandas
+- NumPy
+
+### Visualization
+
+- Matplotlib
+- Seaborn
+
+---
 
 ## Future Improvements
-Integrate a Large Language Model for natural language recommendations
-Build a Streamlit or web interface
-Add model explainability (e.g. SHAP)
-Deploy as an API (FastAPI)
+
+Potential future improvements include:
+
+### Application Layer
+
+- Streamlit interface
+- FastAPI deployment
+- Interactive dashboards
+
+### AI Improvements
+
+- Automated simulation of top SHAP features
+- Multi-scenario optimization
+- More advanced recommendation ranking
+
+### MLOps
+
+- Dockerization
+- CI/CD pipeline
+- Cloud deployment
+- Model monitoring
+
+---
+
+## Conclusion
+
+This project combines machine learning, explainable AI, counterfactual simulations, and LLM-based reasoning to create an intelligent customer retention decision-support system.
+
+Rather than only predicting churn, the system helps identify why customers are likely to leave and which actions are most effective for reducing churn risk.
