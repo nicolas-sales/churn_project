@@ -2,7 +2,7 @@ import os
 import sys
 
 import pandas as pd
-from sklearn.model_selection import train_test_split
+
 
 from src.utils.exception import CustomException
 from src.utils.logger import logging
@@ -13,9 +13,10 @@ from dataclasses import dataclass
 
 class DataIngestionConfig:
 
-    raw_data_path: str = os.path.join("artifacts","raw.csv")
-    train_data_path: str = os.path.join("artifacts","train.csv")
-    test_data_path: str = os.path.join("artifacts","test.csv")
+    raw_data_path = os.path.join(
+        "artifacts",
+        "raw.csv"
+    )
 
 
 class DataIngestion:
@@ -34,23 +35,16 @@ class DataIngestion:
 
             logging.info("Dataset loaded successfully")
 
+            # Create artifacts folder
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
 
+            # Save raw dataset
             df.to_csv(self.ingestion_config.raw_data_path,index=False)
-
-            logging.info("Train Test Split initiated")
-
-            train_set, test_set = train_test_split(df,test_size=0.2,random_state=42)
-
-            train_set.to_csv(self.ingestion_config.train_data_path,index=False)
-
-            test_set.to_csv(self.ingestion_config.test_data_path,index=False)
 
             logging.info("Ingestion completed")
 
             return (
-                self.ingestion_config.train_data_path,
-                self.ingestion_config.test_data_path
+                self.ingestion_config.raw_data_path
             )
         
         except Exception as e:
@@ -61,8 +55,8 @@ class DataIngestion:
 
 if __name__ == "__main__":
 
-    obj = DataIngestion()
+    ingestion = DataIngestion()
 
-    train_data, test_data = (obj.initiate_data_Ingestion())
+    raw_data_path = (ingestion.initiate_data_Ingestion())
 
-    print(train_data,test_data)
+    print(raw_data_path)
