@@ -1,0 +1,11 @@
+[ 2026-05-09 13:43:45,771 ] 30 root - INFO - Entered the data ingestion method
+[ 2026-05-09 13:43:45,806 ] 36 root - INFO - Dataset loaded successfully
+[ 2026-05-09 13:43:45,824 ] 44 root - INFO - Ingestion completed
+[ 2026-05-09 13:43:45,854 ] 96 root - INFO - Raw dataset loaded successfully
+[ 2026-05-09 13:43:45,860 ] 107 root - INFO - Data cleaning completed
+[ 2026-05-09 13:43:45,860 ] 112 root - INFO - Target column converted
+[ 2026-05-09 13:43:45,860 ] 121 root - INFO - Train Test Split completed
+[ 2026-05-09 13:43:45,860 ] 82 root - INFO - Preproessing object created successfully
+[ 2026-05-09 13:43:45,879 ] 131 root - INFO - Data preprocessing completed
+[ 2026-05-09 13:43:45,885 ] 144 root - INFO - Train and test arrays saved successfully
+[ 2026-05-09 13:43:45,885 ] 149 root - INFO - Preprocessor object saved successfully
