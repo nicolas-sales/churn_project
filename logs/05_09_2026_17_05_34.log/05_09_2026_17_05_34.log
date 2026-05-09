@@ -1,0 +1,34 @@
+[ 2026-05-09 17:05:34,302 ] 30 root - INFO - Entered the data ingestion method
+[ 2026-05-09 17:05:34,317 ] 36 root - INFO - Dataset loaded successfully
+[ 2026-05-09 17:05:34,340 ] 44 root - INFO - Ingestion completed
+[ 2026-05-09 17:05:34,363 ] 96 root - INFO - Raw dataset loaded successfully
+[ 2026-05-09 17:05:34,368 ] 107 root - INFO - Data cleaning completed
+[ 2026-05-09 17:05:34,369 ] 112 root - INFO - Target column converted
+[ 2026-05-09 17:05:34,371 ] 121 root - INFO - Train Test Split completed
+[ 2026-05-09 17:05:34,371 ] 82 root - INFO - Preproessing object created successfully
+[ 2026-05-09 17:05:34,391 ] 131 root - INFO - Data preprocessing completed
+[ 2026-05-09 17:05:34,392 ] 144 root - INFO - Train and test arrays saved successfully
+[ 2026-05-09 17:05:34,392 ] 149 root - INFO - Preprocessor object saved successfully
+[ 2026-05-09 17:05:34,392 ] 68 root - INFO - Loading train and testarrays
+[ 2026-05-09 17:05:34,424 ] 74 root - INFO - Train and Test arrays loaded successfully
+[ 2026-05-09 17:05:34,424 ] 84 root - INFO - Input and target features separated
+[ 2026-05-09 17:05:37,521 ] 109 root - INFO - Training started for XgBoost
+[ 2026-05-09 17:05:37,821 ] 118 root - INFO - XgBoost rcall: 0.5
+[ 2026-05-09 17:05:44,278 ] 138 root - INFO - f{model_name} logged to MLflow
+[ 2026-05-09 17:05:44,301 ] 109 root - INFO - Training started for GradientBoosting
+[ 2026-05-09 17:05:45,121 ] 118 root - INFO - GradientBoosting rcall: 0.5
+[ 2026-05-09 17:05:48,382 ] 138 root - INFO - f{model_name} logged to MLflow
+[ 2026-05-09 17:05:48,409 ] 109 root - INFO - Training started for AdaBoost
+[ 2026-05-09 17:05:48,725 ] 118 root - INFO - AdaBoost rcall: 0.49732620320855614
+[ 2026-05-09 17:05:51,229 ] 138 root - INFO - f{model_name} logged to MLflow
+[ 2026-05-09 17:05:51,245 ] 109 root - INFO - Training started for DecisionTree
+[ 2026-05-09 17:05:51,281 ] 118 root - INFO - DecisionTree rcall: 0.5053475935828877
+[ 2026-05-09 17:05:53,897 ] 138 root - INFO - f{model_name} logged to MLflow
+[ 2026-05-09 17:05:53,913 ] 109 root - INFO - Training started for RandomForest
+[ 2026-05-09 17:05:54,461 ] 118 root - INFO - RandomForest rcall: 0.45187165775401067
+[ 2026-05-09 17:05:57,174 ] 138 root - INFO - f{model_name} logged to MLflow
+[ 2026-05-09 17:05:57,199 ] 109 root - INFO - Training started for LogisticRegression
+[ 2026-05-09 17:05:57,232 ] 118 root - INFO - LogisticRegression rcall: 0.7914438502673797
+[ 2026-05-09 17:05:59,994 ] 138 root - INFO - f{model_name} logged to MLflow
+[ 2026-05-09 17:06:00,002 ] 149 root - INFO - Best model found: LogisticRegression
+[ 2026-05-09 17:06:00,002 ] 154 root - INFO - Best model saved successfully
