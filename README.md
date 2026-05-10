@@ -130,17 +130,50 @@ Several machine learning models were evaluated:
 - XGBoost
 - Decision Tree
 
+The project includes:
+
+- Baseline model comparison
+- Hyperparameter tuning using `GridSearchCV`
+- Experiment tracking with MLflow
+- Automatic best model selection based on recall score
+
 The final selected model was:
 
-### Logistic Regression with `class_weight="balanced"`
+### Tuned Random Forest Classifier
+
+The selected model was obtained after hyperparameter optimization using `GridSearchCV`.
 
 ### Reasons for Selection
 
-- Strong recall performance on churn class
-- Stable ROC-AUC score
-- Good interpretability
-- Fast inference
-- Compatibility with SHAP explanations
+- Highest recall score among all evaluated models
+- Better identification of customers likely to churn
+- Improved performance after hyperparameter tuning
+- Strong overall classification performance
+- Suitable for business-oriented churn prevention use cases
+
+---
+
+## Experiment Tracking with MLflow
+
+MLflow was integrated into the training pipeline to track:
+
+- Model parameters
+- Hyperparameters
+- Evaluation metrics
+- Training runs
+- Serialized model artifacts
+
+This enables:
+
+- Reproducibility
+- Model comparison
+- Experiment management
+- Better monitoring of tuning results
+
+Tracked experiments include:
+
+- Baseline model evaluation
+- Tuned model evaluation using `GridSearchCV`
 
 ---
 
@@ -155,12 +188,38 @@ The evaluation focused primarily on identifying churners correctly.
 - F1-score
 - ROC-AUC
 
-### Final Performance
+### Final Performance (Tuned Random Forest)
 
-- Recall (churn class): approximately 0.79
+- Recall (churn class): approximately 0.81
 - ROC-AUC: approximately 0.83
+- Accuracy: approximately 0.73
 
 The model prioritizes recall to reduce false negatives and better identify customers at risk of leaving.
+
+---
+
+## Hyperparameter Optimization
+
+Hyperparameter tuning was performed using `GridSearchCV` on selected models:
+
+- Logistic Regression
+- Random Forest
+- XGBoost
+
+The optimization objective was:
+
+### Recall Score
+
+This choice reflects the business objective of minimizing missed churners.
+
+Example tuned parameters for Random Forest included:
+
+- `n_estimators`
+- `max_depth`
+- `max_features`
+- `min_samples_split`
+
+The tuned Random Forest model achieved the best recall performance across all experiments.
 
 ---
 

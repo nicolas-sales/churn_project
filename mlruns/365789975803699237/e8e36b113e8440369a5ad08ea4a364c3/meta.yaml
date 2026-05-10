@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/nico_/Desktop/Churn project/mlruns/365789975803699237/e8e36b113e8440369a5ad08ea4a364c3/artifacts
+end_time: 1778414044051
+entry_point_name: ''
+experiment_id: '365789975803699237'
+lifecycle_stage: active
+run_id: e8e36b113e8440369a5ad08ea4a364c3
+run_name: Tuned_XGB
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778413992321
+status: 3
+tags: []
+user_id: nico_

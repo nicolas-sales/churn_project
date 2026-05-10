@@ -1,0 +1,8 @@
+artifact_location: file:///C:/Users/nico_/Desktop/Churn project/mlruns/365789975803699237
+creation_time: 1778413638623
+experiment_id: '365789975803699237'
+last_update_time: 1778413638623
+lifecycle_stage: active
+name: customer_churn_prediction
+trace_location: null
+workspace: default

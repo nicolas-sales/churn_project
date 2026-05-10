@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/nico_/Desktop/Churn project/mlruns/365789975803699237/models/m-f554b9676ff6457b922c4b4fc627120e/artifacts
+creation_timestamp: 1778413651521
+experiment_id: '365789975803699237'
+last_updated_timestamp: 1778413654154
+model_id: m-f554b9676ff6457b922c4b4fc627120e
+model_type: null
+name: model
+source_run_id: 5e351cc788eb415bba4da76d6abb5ac8
+status: 2
+status_message: null

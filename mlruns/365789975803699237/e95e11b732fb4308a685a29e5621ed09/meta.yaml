@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/nico_/Desktop/Churn project/mlruns/365789975803699237/e95e11b732fb4308a685a29e5621ed09/artifacts
+end_time: 1778413651153
+entry_point_name: ''
+experiment_id: '365789975803699237'
+lifecycle_stage: active
+run_id: e95e11b732fb4308a685a29e5621ed09
+run_name: GradientBoosting
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778413647477
+status: 3
+tags: []
+user_id: nico_

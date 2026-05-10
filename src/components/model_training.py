@@ -14,6 +14,8 @@ from sklearn.tree import DecisionTreeClassifier
 
 from xgboost import XGBClassifier
 
+from sklearn.model_selection import GridSearchCV
+
 from sklearn.metrics import (accuracy_score,precision_score,recall_score,f1_score,roc_auc_score)
 
 from src.utils.logger import logging
@@ -32,9 +34,6 @@ class ModelTrainer:
         self.model_trainer_config = ModelTrainingConfig()
 
     def evaluate_model(self,X_train,y_train,X_test,y_test,model):
-
-        # Train model
-        model.fit(X_train,y_train)
 
         # Predictions
         y_train_pred = model.predict(X_train)
@@ -83,6 +82,12 @@ class ModelTrainer:
 
             logging.info("Input and target features separated")
 
+
+            # ==================================================
+            # BASELINE MODELS
+            # ==================================================
+
+
             # Models
             models= {
                 "XgBoost":XGBClassifier(eval_metric="logloss"),
@@ -93,7 +98,40 @@ class ModelTrainer:
                 "LogisticRegression":LogisticRegression(class_weight="balanced",max_iter=1000)
             }
 
-            # MLflow experiment
+
+            # ==================================================
+            # GRID SEARCH MODELS
+            # ==================================================
+
+
+            # Hyperparamter training
+
+            LogisticRegression_params = {"C" : [0.01, 0.1, 1, 10],
+                                         "solver" : ["liblinear", "lbfgs"]
+                                         }
+
+            rf_params = { "max_depth": [5,8, 10,15,None],
+                        "max_features": [5,7,8,"sqrt","log2"],
+                        "min_samples_split": [2,8,15,20],
+                        "n_estimators": [100,20,500,1000]}
+
+            xgboost_params= {"learning_rate": [0.1,0.01],
+                            "max_depth": [5,8,12,20,30],
+                            "n_estimators": [100,200,300],
+                            "colsample_bytree": [0.3,0.4,0.5,0.8,1]
+                            }
+            
+            
+            GridSearchCV_models = [("LR", LogisticRegression(class_weight="balanced", max_iter=1000), LogisticRegression_params),
+                                   ("RF", RandomForestClassifier(class_weight="balanced"), rf_params),
+                                   ("XGB", XGBClassifier(eval_metric="logloss"), xgboost_params)]
+
+
+            # ==================================================
+            # MLFLOW
+            # ==================================================
+
+
             # MLflow tracking
             mlflow.set_tracking_uri("file:./mlruns")
 
@@ -105,6 +143,14 @@ class ModelTrainer:
             best_model = None
             model_report = {}
 
+
+            # ==================================================
+            # BASELINE TRAINING
+            # ==================================================
+
+
+            logging.info("Starting baseline training")
+
             # Train and evaluate each model
             for model_name, model in models.items():
 
@@ -112,14 +158,20 @@ class ModelTrainer:
 
                     logging.info(f"Training started for {model_name}")
 
+                    # Train model
+                    model.fit(X_train,y_train)
+
                     # Evaluate model
                     metrics = self.evaluate_model(X_train,y_train,X_test,y_test,model)
 
-                    model_report[model_name] = metrics
+                    model_report[f"Baseline_{model_name}"] = metrics
 
-                    test_recall = (metrics["test_recall"])
+                    test_recall = metrics["test_recall"]
 
-                    logging.info(f"{model_name} rcall: {test_recall}")
+                    logging.info(f"{model_name} recall: {test_recall}")
+
+                    # Training type
+                    mlflow.log_param("training_type","baseline")
 
                     # Log model name
                     mlflow.log_param("model_name",model_name)
@@ -146,16 +198,79 @@ class ModelTrainer:
 
                         best_model_score = test_recall
 
-                        best_model_name = model_name
+                        best_model_name = f"Baseline_{model_name}"
 
                         best_model = model
 
             logging.info(f"Best model found: {best_model_name}")
 
+
+            # ==================================================
+            # GRID SEARCH TRAINING
+            # ==================================================
+
+
+            for model_name, model, params in GridSearchCV_models:
+
+                with mlflow.start_run(run_name=f"Tuned_{model_name}"):
+
+                    grid_search = GridSearchCV(
+                        estimator=model,
+                        param_grid=params,
+                        scoring="recall",
+                        cv=5,
+                        n_jobs=-1
+                    )
+
+                    grid_search.fit(X_train,y_train)
+
+                    best_estimator = grid_search.best_estimator_
+
+                    metrics = self.evaluate_model(X_train,y_train,X_test,y_test,best_estimator)
+
+                    model_report[f"Tuned_{model_name}"] = metrics
+
+                    mlflow.log_param("training_type","grid_search")
+
+                    mlflow.log_param("model_name", model_name)
+
+                    mlflow.log_params(grid_search.best_params_)
+
+                    for metric_name, metric_value in metrics.items():
+                        
+                        mlflow.log_metric(metric_name, metric_value)
+
+                    mlflow.sklearn.log_model(sk_model=best_estimator,artifact_path="model")
+
+                    test_recall = metrics["test_recall"]
+
+                    # Select best model
+                    if test_recall > best_model_score:
+
+                        best_model_score = test_recall
+
+                        best_model_name = f"Tuned_{model_name}"
+
+                        best_model = best_estimator
+
+                    logging.info(f"Best model found: {best_model_name}")
+
+
+            # ==================================================
+            # SAVE BEST MODEL
+            # ==================================================        
+
+
             # Save best model locally
             joblib.dump(best_model,self.model_trainer_config.trained_model_file_path)
 
             logging.info("Best model saved successfully")
+
+
+            # ==================================================
+            # PRINT RESULTS
+            # ==================================================
+
 
             # Print metrics
             for model_name,metrics in model_report.items():
