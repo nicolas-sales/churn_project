@@ -1,0 +1,3 @@
+[ 2026-05-12 12:49:07,914 ] 52 root - INFO - Starting churn prediction
+[ 2026-05-12 12:49:07,916 ] 58 root - INFO - Input converted to dataframe
+[ 2026-05-12 12:49:07,916 ] 31 root - INFO - Loading trained model

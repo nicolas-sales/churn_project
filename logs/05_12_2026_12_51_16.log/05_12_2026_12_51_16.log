@@ -1,0 +1,8 @@
+[ 2026-05-12 12:51:16,735 ] 52 root - INFO - Starting churn prediction
+[ 2026-05-12 12:51:16,735 ] 58 root - INFO - Input converted to dataframe
+[ 2026-05-12 12:51:16,735 ] 31 root - INFO - Loading trained model
+[ 2026-05-12 12:51:25,110 ] 35 root - INFO - Model loaded successfully
+[ 2026-05-12 12:51:25,110 ] 37 root - INFO - Loading preprocessor
+[ 2026-05-12 12:51:25,110 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-05-12 12:51:25,128 ] 68 root - INFO - Input data transformed successfully
+[ 2026-05-12 12:51:25,128 ] 78 root - INFO - Prediction completed successfully
