@@ -1,0 +1,20 @@
+[ 2026-05-12 16:19:50,926 ] 52 root - INFO - Starting churn prediction
+[ 2026-05-12 16:19:50,927 ] 58 root - INFO - Input converted to dataframe
+[ 2026-05-12 16:19:50,927 ] 31 root - INFO - Loading trained model
+[ 2026-05-12 16:19:51,877 ] 35 root - INFO - Model loaded successfully
+[ 2026-05-12 16:19:51,877 ] 37 root - INFO - Loading preprocessor
+[ 2026-05-12 16:19:51,893 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-05-12 16:19:51,893 ] 68 root - INFO - Input data transformed successfully
+[ 2026-05-12 16:19:51,893 ] 78 root - INFO - Prediction completed successfully
+[ 2026-05-12 16:19:51,917 ] 25 root - INFO - Original churn probability: 0.8535
+[ 2026-05-12 16:19:51,917 ] 33 root - INFO - Feature modified: Contract -> One year
+[ 2026-05-12 16:19:51,917 ] 52 root - INFO - Starting churn prediction
+[ 2026-05-12 16:19:51,917 ] 58 root - INFO - Input converted to dataframe
+[ 2026-05-12 16:19:51,917 ] 31 root - INFO - Loading trained model
+[ 2026-05-12 16:19:51,926 ] 35 root - INFO - Model loaded successfully
+[ 2026-05-12 16:19:51,926 ] 37 root - INFO - Loading preprocessor
+[ 2026-05-12 16:19:51,926 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-05-12 16:19:51,926 ] 68 root - INFO - Input data transformed successfully
+[ 2026-05-12 16:19:51,926 ] 78 root - INFO - Prediction completed successfully
+[ 2026-05-12 16:19:51,926 ] 41 root - INFO - Simulated churn probability: 0.5541
+[ 2026-05-12 16:19:51,926 ] 56 root - INFO - Simulation completed successfully
