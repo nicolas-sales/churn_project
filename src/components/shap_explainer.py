@@ -29,7 +29,7 @@ class ShapExplainer:
 
 
         # ==================================================
-        # Create SHAP explainer
+        # Initialize SHAP explainer
         # ==================================================
 
 
@@ -37,7 +37,169 @@ class ShapExplainer:
 
             self.explainer = shap.TreeExplainer(self.model)
 
-            logging.info("SHAP explainer initialized")
+            logging.info("SHAP explainer initialized successfully")
 
         except Exception as e:
             raise CustomException(e,sys)
+        
+    
+    def explain_prediction(self,input_data:dict,top_n:int=5):
+
+        try:
+
+            logging.info("Starting SHAP explanation")
+
+            # ==================================================
+            # Convert input to DataFrame
+            # ==================================================
+
+            df = pd.DataFrame([input_data])
+
+            # ==================================================
+            # Apply preprocessing
+            # ==================================================
+
+            transformed = self.preprocessor.transform(df)
+
+            # ==================================================
+            # Compute SHAP values
+            # ==================================================
+
+            shap_values = self.explainer.shap_values(transformed)
+
+            # ==================================================
+            # Handle RandomForest TreeExplainer output
+            # ==================================================
+
+            if len(shap_values.shape) == 3: # Vérifie si SHAP a retourné un tableau 3D
+                # Select positive churn class
+                shap_values = shap_values[:, :, 1] # Sélectionne uniquement la classe positive, on garde donc l’impact des features sur la probabilité de churn
+
+            # ==================================================
+            # Get transformed feature names
+            # ==================================================
+
+            feature_names = self.preprocessor.get_feature_names_out() # Récupère les noms des features après preprocessing
+
+            # ==================================================
+            # Extract SHAP values for first customer
+            # ==================================================
+
+            shap_row = shap_values[0]
+
+            # ==================================================
+            # Create dictionary:
+            # feature -> shap value
+            # ==================================================
+
+            shap_dict = dict(
+                zip(feature_names,shap_row)
+                )
+
+            # ==================================================
+            # Sort features by absolute importance
+            # ==================================================
+
+            sorted_features = sorted(
+                shap_dict.items(),
+                key=lambda x: abs(x[1]),
+                reverse=True
+                )
+            
+            # ==================================================
+            # Format explanations
+            # ==================================================
+
+            explanations = []
+
+            for feature_name, shap_value in sorted_features[:top_n]:
+
+                # Clean feature names
+
+                clean_feature_name = (
+
+                    feature_name
+                    .replace("cat__","")
+                    .replace("num__","")
+                    .replace("_"," ")
+                )
+
+                # Determine impact direction
+
+                if shap_value > 0:
+
+                    impact = "Increases churn risk"
+
+                else:
+
+                    impact=" Decreases churn risk"
+
+                explanations.append({
+                    "feature" : clean_feature_name,
+                    "shap_value" : round(float(shap_value),4),
+                    "impact" : impact
+
+                })
+
+            logging.info("SHAP explanation completed successfully")
+
+            return explanations
+            
+        except Exception as e:
+            raise CustomException(e,sys)
+        
+
+
+if __name__ == "__main__":
+
+    sample_customer = {
+
+        "gender": "Male",
+
+        "SeniorCitizen": 0,
+
+        "Partner": "No",
+
+        "Dependents": "No",
+
+        "tenure": 2,
+
+        "PhoneService": "Yes",
+
+        "MultipleLines": "No",
+
+        "InternetService": "Fiber optic",
+
+        "OnlineSecurity": "No",
+
+        "OnlineBackup": "No",
+
+        "DeviceProtection": "No",
+
+        "TechSupport": "No",
+
+        "StreamingTV": "No",
+
+        "StreamingMovies": "No",
+
+        "Contract": "Month-to-month",
+
+        "PaperlessBilling": "Yes",
+
+        "PaymentMethod": "Electronic check",
+
+        "MonthlyCharges": 90,
+
+        "TotalCharges": 180
+    }
+
+    explainer = ShapExplainer()
+
+    result = explainer.explain_prediction(input_data=sample_customer,top_n=5)
+
+    print("\nSHAP Explanation:\n")
+
+    for item in result:
+        print(item)
+
+
