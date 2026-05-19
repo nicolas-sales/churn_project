@@ -1,0 +1,11 @@
+[ 2026-05-19 13:32:55,038 ] 19 root - INFO - Starting recommandation generation
+[ 2026-05-19 13:32:55,038 ] 52 root - INFO - Starting churn prediction
+[ 2026-05-19 13:32:55,040 ] 58 root - INFO - Input converted to dataframe
+[ 2026-05-19 13:32:55,040 ] 31 root - INFO - Loading trained model
+[ 2026-05-19 13:32:55,760 ] 35 root - INFO - Model loaded successfully
+[ 2026-05-19 13:32:55,760 ] 37 root - INFO - Loading preprocessor
+[ 2026-05-19 13:32:55,766 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-05-19 13:32:55,766 ] 68 root - INFO - Input data transformed successfully
+[ 2026-05-19 13:32:55,766 ] 78 root - INFO - Prediction completed successfully
+[ 2026-05-19 13:32:55,766 ] 31 root - INFO - Churn_probability: 0.8535
+[ 2026-05-19 13:32:55,766 ] 172 root - INFO - Recommandations generated successfully
