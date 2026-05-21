@@ -9,3 +9,4 @@ venvchurn
 ./artifacts
 
 ./mlruns
+./mlflow.db
