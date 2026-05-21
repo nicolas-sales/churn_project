@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/nico_/Desktop/Churn project/mlruns/365789975803699237/ccdec9e5a6634f9cb0bff5f7fcb987ab/artifacts
+end_time: 1779283924294
+entry_point_name: ''
+experiment_id: '365789975803699237'
+lifecycle_stage: active
+run_id: ccdec9e5a6634f9cb0bff5f7fcb987ab
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779283919366
+status: 3
+tags: []
+user_id: nico_

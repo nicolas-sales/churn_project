@@ -6,17 +6,17 @@ from src.utils.logger import logging
 from src.utils.exception import CustomException
 
 
-class Recommandation:
+class Recommendation:
 
     def __init__(self):
         
         self.predictor = Prediction()
 
-    def generate_recommandations(self,input_data:dict):
+    def generate_recommendations(self,input_data:dict):
 
         try:
 
-            logging.info("Starting recommandation generation")
+            logging.info("Starting recommendation generation")
 
 
             # ==================================================
@@ -236,13 +236,13 @@ if __name__ == "__main__":
     }
 
 
-recommander = Recommandation()
+    recommander = Recommendation()
 
-result = recommander.generate_recommandations(sample_customer)
+    result = recommander.generate_recommendations(sample_customer)
 
-print("\nRecommandation result:\n")
+    print("\nRecommendation result:\n")
 
-print(result)
+    print(result)
             
             
                 

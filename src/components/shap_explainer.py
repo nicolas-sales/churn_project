@@ -5,6 +5,18 @@ import joblib
 import shap
 import pandas as pd
 
+from sklearn.linear_model import LogisticRegression
+
+from sklearn.ensemble import (
+    RandomForestClassifier,
+    GradientBoostingClassifier,
+    AdaBoostClassifier
+)
+
+from sklearn.tree import DecisionTreeClassifier
+
+from xgboost import XGBClassifier
+
 from src.utils.logger import logging
 from src.utils.exception import CustomException
 
@@ -28,16 +40,57 @@ class ShapExplainer:
             logging.info("preprocessor loaded successfully")
 
 
-        # ==================================================
-        # Initialize SHAP explainer
-        # ==================================================
+            # ==================================================
+            # Initialize SHAP explainer
+            # ==================================================
 
 
             logging.info("Initializing SHAP explainer")
 
-            self.explainer = shap.TreeExplainer(self.model)
 
-            logging.info("SHAP explainer initialized successfully")
+            # ==================================================
+            # Logistic Regression
+            # ==================================================
+
+            if isinstance(self.model,LogisticRegression):
+
+                logging.info("Detected LogisticRegression model")
+
+                self.explainer = shap.LinearExplainer(self.model,masker=None)
+
+                self.model_type = ("linear")
+
+
+            # ==================================================
+            # RandomForest / XGBoost / Tree models
+            # ==================================================
+
+            elif isinstance(self.model,(XGBClassifier,GradientBoostingClassifier,AdaBoostClassifier,DecisionTreeClassifier,RandomForestClassifier)):
+
+                logging.info(
+                    "Detected tree-based model"
+                )
+
+                self.explainer = (
+                    shap.TreeExplainer(
+                        self.model
+                    )
+                )
+
+                self.model_type = (
+                    "tree"
+                )
+
+            else:
+
+                raise Exception(
+                    "Unsupported model type for SHAP"
+                )
+
+            logging.info(
+                "SHAP explainer initialized successfully"
+            )
+
 
         except Exception as e:
             raise CustomException(e,sys)
@@ -68,13 +121,29 @@ class ShapExplainer:
             shap_values = self.explainer.shap_values(transformed)
 
             # ==================================================
-            # Handle RandomForest TreeExplainer output
+            # Handle tree-based model outputs
             # ==================================================
 
-            if len(shap_values.shape) == 3: # Vérifie si SHAP a retourné un tableau 3D
-                # Select positive churn class
-                shap_values = shap_values[:, :, 1] # Sélectionne uniquement la classe positive, on garde donc l’impact des features sur la probabilité de churn
+            if self.model_type == "tree":
 
+                # RandomForest can return:
+                # (samples, features, classes)
+
+                if len(shap_values.shape) == 3:
+
+                    # Select churn class
+                    shap_values = (
+                        shap_values[:, :, 1])
+
+
+            # ==================================================
+            # Extract first customer SHAP values
+            # ==================================================
+
+
+            shap_row = shap_values[0]
+            
+            
             # ==================================================
             # Get transformed feature names
             # ==================================================
@@ -85,7 +154,7 @@ class ShapExplainer:
             # Extract SHAP values for first customer
             # ==================================================
 
-            shap_row = shap_values[0]
+            #shap_row = shap_values[0]
 
             # ==================================================
             # Create dictionary:
@@ -132,7 +201,7 @@ class ShapExplainer:
 
                 else:
 
-                    impact=" Decreases churn risk"
+                    impact="Decreases churn risk"
 
                 explanations.append({
                     "feature" : clean_feature_name,

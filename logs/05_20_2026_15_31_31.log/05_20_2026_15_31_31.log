@@ -1,0 +1,48 @@
+[ 2026-05-20 15:31:34,851 ] 23 root - INFO - Traing pipeline started
+[ 2026-05-20 15:31:34,851 ] 31 root - INFO - Started data ingestion
+[ 2026-05-20 15:31:34,851 ] 30 root - INFO - Entered the data ingestion method
+[ 2026-05-20 15:31:34,907 ] 36 root - INFO - Dataset loaded successfully
+[ 2026-05-20 15:31:34,945 ] 44 root - INFO - Ingestion completed
+[ 2026-05-20 15:31:34,945 ] 35 root - INFO - Data ingestion completed
+[ 2026-05-20 15:31:34,945 ] 43 root - INFO - Started data transformation
+[ 2026-05-20 15:31:34,977 ] 96 root - INFO - Raw dataset loaded successfully
+[ 2026-05-20 15:31:34,990 ] 107 root - INFO - Data cleaning completed
+[ 2026-05-20 15:31:34,992 ] 112 root - INFO - Target column converted
+[ 2026-05-20 15:31:34,996 ] 121 root - INFO - Train Test Split completed
+[ 2026-05-20 15:31:34,996 ] 82 root - INFO - Preproessing object created successfully
+[ 2026-05-20 15:31:35,028 ] 131 root - INFO - Data preprocessing completed
+[ 2026-05-20 15:31:35,030 ] 144 root - INFO - Train and test arrays saved successfully
+[ 2026-05-20 15:31:35,033 ] 149 root - INFO - Preprocessor object saved successfully
+[ 2026-05-20 15:31:35,035 ] 47 root - INFO - Data transformation completed
+[ 2026-05-20 15:31:35,035 ] 55 root - INFO - Started model training
+[ 2026-05-20 15:31:35,035 ] 67 root - INFO - Loading train and testarrays
+[ 2026-05-20 15:31:35,062 ] 73 root - INFO - Train and Test arrays loaded successfully
+[ 2026-05-20 15:31:35,062 ] 83 root - INFO - Input and target features separated
+[ 2026-05-20 15:31:35,095 ] 152 root - INFO - Starting baseline training
+[ 2026-05-20 15:31:35,783 ] 159 root - INFO - Training started for XgBoost
+[ 2026-05-20 15:31:36,580 ] 171 root - INFO - XgBoost recall: 0.5
+[ 2026-05-20 15:31:45,625 ] 194 root - INFO - XgBoost logged to MLflow
+[ 2026-05-20 15:31:45,682 ] 159 root - INFO - Training started for GradientBoosting
+[ 2026-05-20 15:31:46,881 ] 171 root - INFO - GradientBoosting recall: 0.5
+[ 2026-05-20 15:31:50,877 ] 194 root - INFO - GradientBoosting logged to MLflow
+[ 2026-05-20 15:31:50,934 ] 159 root - INFO - Training started for AdaBoost
+[ 2026-05-20 15:31:51,305 ] 171 root - INFO - AdaBoost recall: 0.49732620320855614
+[ 2026-05-20 15:31:55,262 ] 194 root - INFO - AdaBoost logged to MLflow
+[ 2026-05-20 15:31:55,312 ] 159 root - INFO - Training started for DecisionTree
+[ 2026-05-20 15:31:55,364 ] 171 root - INFO - DecisionTree recall: 0.5106951871657754
+[ 2026-05-20 15:31:59,360 ] 194 root - INFO - DecisionTree logged to MLflow
+[ 2026-05-20 15:31:59,422 ] 159 root - INFO - Training started for RandomForest
+[ 2026-05-20 15:32:00,189 ] 171 root - INFO - RandomForest recall: 0.446524064171123
+[ 2026-05-20 15:32:04,294 ] 194 root - INFO - RandomForest logged to MLflow
+[ 2026-05-20 15:32:04,342 ] 159 root - INFO - Training started for LogisticRegression
+[ 2026-05-20 15:32:04,365 ] 171 root - INFO - LogisticRegression recall: 0.7914438502673797
+[ 2026-05-20 15:32:08,328 ] 194 root - INFO - LogisticRegression logged to MLflow
+[ 2026-05-20 15:32:08,328 ] 205 root - INFO - Best model found: Baseline_LogisticRegression
+[ 2026-05-20 15:32:17,035 ] 256 root - INFO - Best model found: Baseline_LogisticRegression
+[ 2026-05-20 15:37:49,090 ] 256 root - INFO - Best model found: Tuned_RF
+[ 2026-05-20 15:38:55,379 ] 256 root - INFO - Best model found: Tuned_RF
+[ 2026-05-20 15:38:55,385 ] 267 root - INFO - Best model saved successfully
+[ 2026-05-20 15:38:55,403 ] 59 root - INFO - model training completed
+[ 2026-05-20 15:38:55,404 ] 61 root - INFO - Best model: Tuned_RF
+[ 2026-05-20 15:38:55,404 ] 63 root - INFO - Best model score: 0.8101604278074866
+[ 2026-05-20 15:38:55,404 ] 77 root - INFO - Training Pipeline completed successfully

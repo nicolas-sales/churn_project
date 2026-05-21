@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/nico_/Desktop/Churn project/mlruns/365789975803699237/fdf598843fc844ed858aaf48ff98cb60/artifacts
+end_time: 1779197809133
+entry_point_name: ''
+experiment_id: '365789975803699237'
+lifecycle_stage: active
+run_id: fdf598843fc844ed858aaf48ff98cb60
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779197806371
+status: 3
+tags: []
+user_id: nico_

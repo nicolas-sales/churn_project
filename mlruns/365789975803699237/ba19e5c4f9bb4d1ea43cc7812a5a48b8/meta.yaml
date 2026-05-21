@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/nico_/Desktop/Churn project/mlruns/365789975803699237/ba19e5c4f9bb4d1ea43cc7812a5a48b8/artifacts
+end_time: 1779198333422
+entry_point_name: ''
+experiment_id: '365789975803699237'
+lifecycle_stage: active
+run_id: ba19e5c4f9bb4d1ea43cc7812a5a48b8
+run_name: Tuned_RF
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779197815519
+status: 3
+tags: []
+user_id: nico_

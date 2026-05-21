@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/nico_/Desktop/Churn project/mlruns/365789975803699237/1f942faa3fc44b50b3cfbd1d21a2df1c/artifacts
+end_time: 1779197793420
+entry_point_name: ''
+experiment_id: '365789975803699237'
+lifecycle_stage: active
+run_id: 1f942faa3fc44b50b3cfbd1d21a2df1c
+run_name: XgBoost
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779197785513
+status: 3
+tags: []
+user_id: nico_

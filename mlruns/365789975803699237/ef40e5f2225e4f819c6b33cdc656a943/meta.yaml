@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/nico_/Desktop/Churn project/mlruns/365789975803699237/ef40e5f2225e4f819c6b33cdc656a943/artifacts
+end_time: 1779197799991
+entry_point_name: ''
+experiment_id: '365789975803699237'
+lifecycle_stage: active
+run_id: ef40e5f2225e4f819c6b33cdc656a943
+run_name: AdaBoost
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779197797060
+status: 3
+tags: []
+user_id: nico_

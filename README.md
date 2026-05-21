@@ -137,9 +137,13 @@ The project includes:
 - Experiment tracking with MLflow
 - Automatic best model selection based on recall score
 
-The final selected model was:
+The final selected model is dynamically determined during training
+based on evaluation metrics and hyperparameter optimization results.
 
-### Tuned Random Forest Classifier
+The training pipeline automatically selects the best-performing model
+according to the target business metric (recall).
+
+### Model selection
 
 The selected model was obtained after hyperparameter optimization using `GridSearchCV`.
 
@@ -188,12 +192,6 @@ The evaluation focused primarily on identifying churners correctly.
 - F1-score
 - ROC-AUC
 
-### Final Performance (Tuned Random Forest)
-
-- Recall (churn class): approximately 0.81
-- ROC-AUC: approximately 0.83
-- Accuracy: approximately 0.73
-
 The model prioritizes recall to reduce false negatives and better identify customers at risk of leaving.
 
 ---
@@ -212,14 +210,14 @@ The optimization objective was:
 
 This choice reflects the business objective of minimizing missed churners.
 
-Example tuned parameters for Random Forest included:
+The final selected model may vary depending on:
+- Hyperparameter optimization
+- Cross-validation results
+- Data split variations
+- Model generalization performance
 
-- `n_estimators`
-- `max_depth`
-- `max_features`
-- `min_samples_split`
-
-The tuned Random Forest model achieved the best recall performance across all experiments.
+The pipeline automatically saves the best-performing model
+based on recall optimization.
 
 ---
 
