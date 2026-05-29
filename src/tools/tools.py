@@ -50,7 +50,7 @@ def simulation_tool_func(input_data:dict, feature:str, new_value):
 
 simulation_tool = StructuredTool.from_function(
     func=simulation_tool_func,
-    name="simulate_chane",
+    name="simulate_change",
     description="""
     Simulate the impact of changing
     customer features on churn probability
