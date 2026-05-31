@@ -61,7 +61,7 @@ The objective is to move beyond static prediction and provide interpretable, bus
 
 ## Counterfactual Simulations
 
-![Simulation Results](screenshots/simulation_results.png)
+![Simulation Results](screenshots/simulation.png)
 
 ---
 
