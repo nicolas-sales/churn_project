@@ -15,6 +15,62 @@ The objective is to move beyond static prediction and provide interpretable, bus
 
 ---
 
+# Application Screenshots
+
+## Title
+
+![Customer Profile](screenshots/Title.png)
+
+---
+
+## Features
+
+![Customer Profile](screenshots/features.png)
+
+---
+
+## Churn Analysis Dashboard
+
+![Churn Dashboard](screenshots/churn_dashboard.png)
+
+---
+
+## SHAP Explainability
+
+![SHAP Analysis](screenshots/shap_dashboard.png)
+
+---
+
+## Recommendations
+
+![Recommendations](screenshots/recommendations.png)
+
+---
+
+## Customer Profile Input
+
+![Customer Profile](screenshots/customer_profile.png)
+
+---
+
+## SHAP Explainability and recommendations
+
+![SHAP Analysis and recommendations](screenshots/key_insight_shap_&_recommendations.png)
+
+---
+
+## Counterfactual Simulations
+
+![Simulation Results](screenshots/simulation_results.png)
+
+---
+
+## prioritized actions and conclusion
+
+![Prioritized Actions](screenshots/prioritized_actions.png)
+
+---
+
 ## Objectives
 
 The project aims to:

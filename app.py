@@ -18,7 +18,7 @@ st.title("📉 Customer churn assistant")
 
 st.markdown(
     """
-    Predict chur risk, explain predictions,
+    Predict churn risk, explain predictions,
     generate retention recommendations,
     and validate actions through simulations"""
 )
