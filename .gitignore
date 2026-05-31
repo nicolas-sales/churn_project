@@ -10,5 +10,3 @@ venvchurn
 
 ./mlruns
 ./mlflow.db
-
-./screenshots
