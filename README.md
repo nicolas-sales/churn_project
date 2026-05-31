@@ -15,6 +15,29 @@ The objective is to move beyond static prediction and provide interpretable, bus
 
 ---
 
+## System Architecture
+
+Customer Input
+        │
+        ▼
+Prediction Pipeline
+        │
+ ┌──────┼──────┐
+ ▼      ▼      ▼
+Prediction
+SHAP
+Recommendation
+        │
+        ▼
+Simulation Engine
+        │
+        ▼
+LangChain Agent
+        │
+        ▼
+Streamlit Dashboard
+
+---
 # Application Screenshots
 
 ## Title
