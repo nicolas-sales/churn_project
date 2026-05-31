@@ -67,7 +67,7 @@ The objective is to move beyond static prediction and provide interpretable, bus
 
 ## prioritized actions and conclusion
 
-![Prioritized Actions](screenshots/prioritized_actions.png)
+![Prioritized Actions](screenshots/prioritized_actions_&_conclusion.png)
 
 ---
 
