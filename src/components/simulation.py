@@ -69,7 +69,7 @@ class Simulation:
             return result
         
         except Exception as e:
-            CustomException(e,sys)
+            raise CustomException(e,sys)
 
 
 if __name__=="__main__":

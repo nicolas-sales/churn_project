@@ -169,11 +169,51 @@ class ShapExplainer:
             # Sort features by absolute importance
             # ==================================================
 
+
+            active_features = {}
+
+            for feature_name, feature_value, shap_value in zip(
+                feature_names,
+                transformed[0],
+                shap_row
+            ):
+                
+            # On parcourt en même temps :
+            # - le nom de la feature après preprocessing
+            # - la valeur transformée de cette feature pour le client
+            # - la valeur SHAP associée à cette feature
+
+                if feature_value != 0:
+
+                    # On garde seulement les features réellement présentes chez le client.
+                    # Exemple :
+                    # TechSupport_Yes = 1 → gardé
+                    # TechSupport_No = 0 → ignoré
+
+
+                    active_features[feature_name] = shap_value
+
+                    # On ajoute la feature active dans le dictionnaire
+                    # avec sa valeur SHAP.
+
+
             sorted_features = sorted(
-                shap_dict.items(),
-                key=lambda x: abs(x[1]),
-                reverse=True
-                )
+            active_features.items(),
+            key=lambda x: abs(x[1]),
+            reverse=True
+            )
+
+            # On trie les features actives par importance SHAP absolue.
+            # abs(x[1]) permet de classer les impacts forts,
+            # qu'ils augmentent ou diminuent le churn.
+            # reverse=True met les plus importantes en premier.
+
+
+            #sorted_features = sorted(
+                #shap_dict.items(),
+                #key=lambda x: abs(x[1]),
+                #reverse=True
+                #)
             
             # ==================================================
             # Format explanations

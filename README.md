@@ -274,20 +274,19 @@ The project includes a LangChain-based AI agent capable of orchestrating multipl
 
 ### Tools Used
 
-- `predict_churn`
-- `explain_prediction`
-- `recommend_action`
-- `simulate_change`
+- full_customer_analysis
+- simulate_change
 
 ### Agent Workflow
 
 The agent follows the workflow:
 
-1. Predict churn probability
-2. Explain prediction drivers using SHAP
-3. Generate retention recommendations
-4. Simulate high-impact actions
-5. Produce a business-oriented synthesis
+1. Run a complete customer analysis through the prediction pipeline
+2. Retrieve churn prediction, SHAP explanations, and recommendations
+3. Identify important churn drivers
+4. Simulate candidate retention actions
+5. Evaluate the impact of each action
+6. Generate an executive business summary
 
 ---
 
@@ -318,6 +317,35 @@ The recommendation engine combines:
 
 ---
 
+## Streamlit Application
+
+A Streamlit application was developed to provide an interactive user interface for customer churn analysis.
+
+### Features
+
+The application allows users to:
+
+- Enter customer profile information
+- Predict churn probability
+- Visualize churn risk through KPI indicators
+- Display SHAP-based feature importance
+- Generate retention recommendations
+- Obtain an AI-generated executive summary
+- Validate recommendations through counterfactual simulations
+
+### Visual Components
+
+- Churn probability KPI
+- Risk level KPI
+- Churn probability gauge chart
+- SHAP feature importance visualization
+- Recommendation cards
+- AI-generated business summary
+
+The interface provides a business-friendly view of model predictions and recommended retention actions.
+
+---
+
 ## Technologies Used
 
 ### Machine Learning
@@ -331,6 +359,7 @@ The recommendation engine combines:
 
 ### AI Agent Framework
 
+- OpenAI GPT-4o-mini
 - LangChain
 
 ### Data Processing
@@ -343,6 +372,11 @@ The recommendation engine combines:
 - Matplotlib
 - Seaborn
 
+### Application
+
+- Streamlit
+- Plotly
+
 ---
 
 ## Future Improvements
@@ -351,7 +385,6 @@ Potential future improvements include:
 
 ### Application Layer
 
-- Streamlit interface
 - FastAPI deployment
 - Interactive dashboards
 
@@ -367,6 +400,27 @@ Potential future improvements include:
 - CI/CD pipeline
 - Cloud deployment
 - Model monitoring
+
+---
+
+## Example End-to-End Workflow
+
+The system performs the following steps:
+
+1. Customer profile submission
+2. Churn probability prediction
+3. SHAP explanation generation
+4. Recommendation generation
+5. Counterfactual simulation
+6. AI executive summary creation
+
+Example output:
+
+- Churn Probability: 41.3%
+- Risk Level: Medium Risk
+- Main Driver: Electronic Check payment method
+- Best Action: Switch to a one-year contract
+- Expected Reduction in Churn Probability: 5.05%
 
 ---
 

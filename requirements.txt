@@ -13,3 +13,5 @@ langchain.tools
 langchain_core
 shap
 mlflow
+streamlit
+plotly

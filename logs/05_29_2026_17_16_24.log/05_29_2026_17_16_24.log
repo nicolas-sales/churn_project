@@ -1,0 +1,7 @@
+[ 2026-05-29 17:16:26,536 ] 30 root - INFO - Loading trained model
+[ 2026-05-29 17:16:26,536 ] 34 root - INFO - model loaded successfully
+[ 2026-05-29 17:16:26,536 ] 36 root - INFO - loading preprocessor
+[ 2026-05-29 17:16:26,546 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-05-29 17:16:26,546 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-05-29 17:16:26,546 ] 70 root - INFO - Detected tree-based model
+[ 2026-05-29 17:16:26,546 ] 90 root - INFO - SHAP explainer initialized successfully
