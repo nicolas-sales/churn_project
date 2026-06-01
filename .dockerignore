@@ -1,0 +1,12 @@
+./data
+./models
+
+./venvchurn
+venvchurn
+.env
+
+./logs
+./artifacts
+
+./mlruns
+./mlflow.db

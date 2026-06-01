@@ -1,0 +1,173 @@
+[ 2026-06-01 12:33:52,487 ] 30 root - INFO - Loading trained model
+[ 2026-06-01 12:33:52,495 ] 34 root - INFO - model loaded successfully
+[ 2026-06-01 12:33:52,495 ] 36 root - INFO - loading preprocessor
+[ 2026-06-01 12:33:52,497 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-01 12:33:52,497 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-01 12:33:52,497 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-01 12:33:52,499 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-01 12:33:52,501 ] 30 root - INFO - Loading trained model
+[ 2026-06-01 12:33:52,529 ] 34 root - INFO - model loaded successfully
+[ 2026-06-01 12:33:52,529 ] 36 root - INFO - loading preprocessor
+[ 2026-06-01 12:33:52,531 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-01 12:33:52,533 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-01 12:33:52,533 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-01 12:33:52,533 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-01 12:33:52,533 ] 23 root - INFO - Initialize Churn Agent
+[ 2026-06-01 12:33:52,987 ] 30 root - INFO - LM initialized successfully
+[ 2026-06-01 12:33:52,989 ] 77 root - INFO - Agent created successfully
+[ 2026-06-01 12:35:32,807 ] 40 root - INFO - Prediction pipeline started
+[ 2026-06-01 12:35:32,807 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:35:32,808 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:35:32,808 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:35:32,827 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:35:32,833 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:35:32,837 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:35:32,858 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:35:32,867 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:35:32,867 ] 56 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:35:32,867 ] 103 root - INFO - Starting SHAP explanation
+[ 2026-06-01 12:35:32,887 ] 253 root - INFO - SHAP explanation completed successfully
+[ 2026-06-01 12:35:32,887 ] 73 root - INFO - SHAP explanation completed successfully
+[ 2026-06-01 12:35:32,887 ] 19 root - INFO - Starting recommendation generation
+[ 2026-06-01 12:35:32,887 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:35:32,887 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:35:32,887 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:35:32,907 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:35:32,909 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:35:32,909 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:35:32,927 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:35:32,937 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:35:32,940 ] 31 root - INFO - Churn_probability: 0.413
+[ 2026-06-01 12:35:32,940 ] 172 root - INFO - Recommandations generated successfully
+[ 2026-06-01 12:35:32,940 ] 89 root - INFO - Recommendations generated successfully
+[ 2026-06-01 12:35:32,940 ] 109 root - INFO - Prediction pipeline completed successfully
+[ 2026-06-01 12:37:19,057 ] 87 root - INFO - Started customer analysis
+[ 2026-06-01 12:37:21,907 ] 1025 httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-06-01 12:37:21,947 ] 40 root - INFO - Prediction pipeline started
+[ 2026-06-01 12:37:21,947 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:21,947 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:21,947 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:21,971 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:21,972 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:21,977 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:21,987 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:21,997 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:21,997 ] 56 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:21,997 ] 103 root - INFO - Starting SHAP explanation
+[ 2026-06-01 12:37:22,017 ] 253 root - INFO - SHAP explanation completed successfully
+[ 2026-06-01 12:37:22,017 ] 73 root - INFO - SHAP explanation completed successfully
+[ 2026-06-01 12:37:22,017 ] 19 root - INFO - Starting recommendation generation
+[ 2026-06-01 12:37:22,017 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:22,017 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:22,017 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:22,037 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:22,037 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:22,042 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:22,059 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:22,067 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:22,067 ] 31 root - INFO - Churn_probability: 0.413
+[ 2026-06-01 12:37:22,067 ] 172 root - INFO - Recommandations generated successfully
+[ 2026-06-01 12:37:22,067 ] 89 root - INFO - Recommendations generated successfully
+[ 2026-06-01 12:37:22,067 ] 109 root - INFO - Prediction pipeline completed successfully
+[ 2026-06-01 12:37:32,297 ] 1025 httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-06-01 12:37:32,317 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,317 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,317 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,324 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,326 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,327 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,335 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,339 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,339 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,367 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,367 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,367 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,375 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,383 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,383 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,390 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,394 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,397 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,397 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,400 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,400 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,408 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,420 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,431 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,433 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,438 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,447 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,447 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,467 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,486 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,496 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,498 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,498 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,507 ] 25 root - INFO - Original churn probability: 0.413
+[ 2026-06-01 12:37:32,509 ] 25 root - INFO - Original churn probability: 0.413
+[ 2026-06-01 12:37:32,509 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,509 ] 25 root - INFO - Original churn probability: 0.413
+[ 2026-06-01 12:37:32,509 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,509 ] 33 root - INFO - Feature modified: PaymentMethod -> Bank transfer (automatic)
+[ 2026-06-01 12:37:32,509 ] 33 root - INFO - Feature modified: TechSupport -> No
+[ 2026-06-01 12:37:32,527 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,527 ] 33 root - INFO - Feature modified: Contract -> One year
+[ 2026-06-01 12:37:32,527 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,527 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,531 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,539 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,539 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,541 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,541 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,557 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,557 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,557 ] 25 root - INFO - Original churn probability: 0.413
+[ 2026-06-01 12:37:32,563 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,563 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,569 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,569 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,569 ] 33 root - INFO - Feature modified: tenure -> 24
+[ 2026-06-01 12:37:32,580 ] 25 root - INFO - Original churn probability: 0.413
+[ 2026-06-01 12:37:32,597 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,597 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,597 ] 33 root - INFO - Feature modified: TotalCharges -> 280
+[ 2026-06-01 12:37:32,605 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,607 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,607 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,607 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-01 12:37:32,613 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,617 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,617 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-01 12:37:32,621 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,621 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,632 ] 31 root - INFO - Loading trained model
+[ 2026-06-01 12:37:32,632 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,642 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,653 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,678 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,678 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,697 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,709 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,711 ] 41 root - INFO - Simulated churn probability: 0.373
+[ 2026-06-01 12:37:32,720 ] 56 root - INFO - Simulation completed successfully
+[ 2026-06-01 12:37:32,720 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,727 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-01 12:37:32,727 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,728 ] 41 root - INFO - Simulated churn probability: 0.4841
+[ 2026-06-01 12:37:32,728 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,728 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-01 12:37:32,747 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,747 ] 56 root - INFO - Simulation completed successfully
+[ 2026-06-01 12:37:32,757 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,767 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-01 12:37:32,779 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-01 12:37:32,787 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,797 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,803 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-01 12:37:32,803 ] 41 root - INFO - Simulated churn probability: 0.3625
+[ 2026-06-01 12:37:32,803 ] 41 root - INFO - Simulated churn probability: 0.3913
+[ 2026-06-01 12:37:32,803 ] 41 root - INFO - Simulated churn probability: 0.413
+[ 2026-06-01 12:37:32,803 ] 56 root - INFO - Simulation completed successfully
+[ 2026-06-01 12:37:32,803 ] 56 root - INFO - Simulation completed successfully
+[ 2026-06-01 12:37:32,803 ] 56 root - INFO - Simulation completed successfully
+[ 2026-06-01 12:37:44,057 ] 1025 httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"

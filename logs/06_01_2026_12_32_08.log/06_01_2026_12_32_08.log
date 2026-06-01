@@ -1,0 +1,17 @@
+[ 2026-06-01 12:32:34,395 ] 30 root - INFO - Loading trained model
+[ 2026-06-01 12:32:34,417 ] 34 root - INFO - model loaded successfully
+[ 2026-06-01 12:32:34,417 ] 36 root - INFO - loading preprocessor
+[ 2026-06-01 12:32:34,442 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-01 12:32:34,442 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-01 12:32:34,442 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-01 12:32:34,447 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-01 12:32:34,458 ] 30 root - INFO - Loading trained model
+[ 2026-06-01 12:32:34,487 ] 34 root - INFO - model loaded successfully
+[ 2026-06-01 12:32:34,487 ] 36 root - INFO - loading preprocessor
+[ 2026-06-01 12:32:34,490 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-01 12:32:34,490 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-01 12:32:34,490 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-01 12:32:34,490 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-01 12:32:34,490 ] 23 root - INFO - Initialize Churn Agent
+[ 2026-06-01 12:32:35,018 ] 30 root - INFO - LM initialized successfully
+[ 2026-06-01 12:32:35,082 ] 77 root - INFO - Agent created successfully
