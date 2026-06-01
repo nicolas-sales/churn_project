@@ -15,6 +15,14 @@ The objective is to move beyond static prediction and provide interpretable, bus
 
 ---
 
+## Live Demo
+
+🚀 Streamlit Application:
+
+https://churnproject-iwgy6xubghtjanepybgzce.streamlit.app/
+
+---
+
 ## System Architecture
 
 ![Architecture](screenshots/system_architecture.png)
