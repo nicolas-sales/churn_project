@@ -11,8 +11,9 @@ on:
 
 jobs:
 
-    test:
-
+    CI:
+        
+        name: Continuous Integration
         runs-on: ubuntu-latest
 
         steps:
@@ -29,6 +30,11 @@ jobs:
               run: |
                 python -m pip install --upgrade pip
                 pip install -r requirements.txt
+                
+            - name: Lint code
+              run: |
+                pip install flake8
+                flake8 src --count --statistics
 
             - name: Build Docker image
               run: |
