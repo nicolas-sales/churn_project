@@ -6,7 +6,6 @@ venvchurn
 .env
 
 ./logs
-./artifacts
 
 ./mlruns
 ./mlflow.db

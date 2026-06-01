@@ -415,6 +415,57 @@ The interface provides a business-friendly view of model predictions and recomme
 
 ---
 
+## FastAPI Backend
+
+A production-ready FastAPI backend was developed to expose the churn prediction system through REST APIs.
+
+### Available Endpoints
+
+#### POST /pipeline
+
+Runs the complete prediction pipeline and returns:
+
+- churn prediction
+- SHAP explanations
+- recommendations
+
+#### POST /analyze
+
+Runs the LangChain agent and returns:
+
+- business summary
+- simulation results
+- prioritized retention actions
+
+### Interactive Documentation
+
+FastAPI automatically generates Swagger documentation available at:
+
+http://localhost:8000/docs
+
+---
+
+## Docker Deployment
+
+The FastAPI backend was containerized using Docker.
+
+### Benefits
+
+- Reproducible deployment
+- Environment consistency
+- Easier cloud deployment
+- Simplified CI/CD integration
+
+### Build
+
+docker build -t churn-api .
+
+### Run
+
+docker run -p 8000:8000 churn-api
+
+---
+
 ## Technologies Used
 
 ### Machine Learning
@@ -446,26 +497,23 @@ The interface provides a business-friendly view of model predictions and recomme
 - Streamlit
 - Plotly
 
+### Backend
+
+- FastAPI
+- Uvicorn
+
+### Containerization
+
+- Docker
+
 ---
 
 ## Future Improvements
 
 Potential future improvements include:
 
-### Application Layer
-
-- FastAPI deployment
-- Interactive dashboards
-
-### AI Improvements
-
-- Automated simulation of top SHAP features
-- Multi-scenario optimization
-- More advanced recommendation ranking
-
 ### MLOps
 
-- Dockerization
 - CI/CD pipeline
 - Cloud deployment
 - Model monitoring
