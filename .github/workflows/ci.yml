@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI-CD FastAPI 
 
 on:
     push:
@@ -13,24 +13,61 @@ jobs:
 
     CI:
         
-        name: Continuous Integration
-        runs-on: ubuntu-latest
+      name: Continuous Integration
+      runs-on: ubuntu-latest
 
-        steps:
+      steps:
+        
+        - name: Checkout repository
+          uses: actions/checkout@v4
 
-            - name: Checkout repository
-              uses: actions/checkout@v4
+        - name: Set up Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: "3.10"
 
-            - name: Set up Python
-              uses: actions/setup-python@v5
-              with:
-                python-version: "3.10"
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
 
-            - name: Install dependencies
-              run: |
-                python -m pip install --upgrade pip
-                pip install -r requirements.txt
+        - name: Build Docker image
+          run: |
+            docker build -t churn-api .
 
-            - name: Build Docker image
-              run: |
-                docker build -t churn-api .
+    build-and-push:
+
+      name : Continuous Delivery - Build and push to ECR
+      needs : CI
+      runs-on: ubuntu-latest
+
+      steps:
+
+        - name: Checkout repository
+          uses: actions/checkout@v4
+
+        - name: Configure AWS credentials
+          uses: aws-actions/configure-aws-credentials@v4
+
+          with:
+            aws-access-key-id: $ {{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: $ {{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws-region: $ {{ secrets.AWS_REGION }}
+
+        - name: Login to Amazon ECR
+          id: login-ecr
+          uses: aws-actions/amazon-ecr-login@v2
+
+        - name: Build, tag and push Docker image
+          env:
+            ECR_REGISTRY: $ {{ steps.login-ecr.outputs.registry }}
+            ECR_REPOSITORY: $ {{ secrets.ECR_REPOSITORY_NAME }}
+            IMAGE_TAG: latest
+
+          run: |
+            docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+            docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+
+
+        
