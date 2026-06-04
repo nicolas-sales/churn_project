@@ -35,7 +35,9 @@ jobs:
           run: |
             docker build -t churn-api .
 
-        - name: Run tests
+        - name: Run unit tests
+          env:
+            PYTHONPATH: .
           run: |
             pip install pytest httpx
             pytest tests/
