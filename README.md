@@ -439,6 +439,10 @@ Runs the LangChain agent and returns:
 
 ### Interactive Documentation
 
+![FastAPI Swagger](screenshots/fa1.png)
+![FastAPI Swagger](screenshots/fa5.png)
+![FastAPI Swagger](screenshots/fa7.png)
+
 FastAPI automatically generates Swagger documentation available at:
 
 http://localhost:8000/docs
@@ -506,17 +510,63 @@ docker run -p 8000:8000 churn-api
 
 - Docker
 
+### Cloud & DevOps
+
+- Docker
+- GitHub Actions
+- Amazon ECR
+- Amazon ECS Fargate
+- AWS IAM
+- AWS VPC
+- Pytest
+
 ---
 
-## Future Improvements
+## CI/CD Pipeline
 
-Potential future improvements include:
+A complete CI/CD pipeline was implemented using GitHub Actions and AWS services.
 
-### MLOps
+![GitHub Actions](screenshots/CICD.png)
 
-- CI/CD pipeline
-- Cloud deployment
-- Model monitoring
+### Continuous Integration
+
+Every push to the main branch automatically triggers:
+
+- Dependency installation
+- Automated API testing with Pytest
+- Docker image build validation
+
+### Continuous Delivery
+
+The pipeline automatically:
+
+- Builds the Docker image
+- Pushes the image to Amazon ECR
+
+### Continuous Deployment
+
+The deployment pipeline automatically:
+
+- Triggers a new ECS deployment
+- Pulls the latest image from ECR
+- Launches a new Fargate task
+- Replaces the previous running version
+
+### CI/CD Workflow
+
+GitHub
+|
+GitHub Actions
+|
+Pytest
+|
+Docker Build
+|
+Amazon ECR
+|
+Amazon ECS Fargate
+|
+Production API
 
 ---
 
