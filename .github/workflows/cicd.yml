@@ -35,7 +35,12 @@ jobs:
           run: |
             docker build -t churn-api .
 
-    build-and-push:
+        - name: Run tests
+          run: |
+            pip install pytest httpx
+            pytest tests/
+
+    continuous-delivery:
 
       name : Continuous Delivery - Build and push to ECR
       needs : CI
@@ -68,6 +73,26 @@ jobs:
             docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
             docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
+    continuous-deployment:
 
+      name: Continuous Deployment - ECS Fargate
+      needs: continuous-delivery
+      runs-on: ubuntu-latest
+
+      steps:
+
+        - name: Configure AWS credentials
+          uses: aws-actions/configure-aws-credentials@v4
+          with:
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws-region: ${{ secrets.AWS_REGION }}
+
+        - name: Deploy new ECS revision
+          run: |
+            aws ecs update-service \
+              --cluster churn-cluster \
+              --sercice churn-api-task-service \
+              --force-new-deployment
 
         
