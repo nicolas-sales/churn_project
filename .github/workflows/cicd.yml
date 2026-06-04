@@ -94,7 +94,7 @@ jobs:
           run: |
             aws ecs update-service \
               --cluster churn-cluster \
-              --sercice churn-api-task-service \
+              --service churn-api-task-service \
               --force-new-deployment
 
         
