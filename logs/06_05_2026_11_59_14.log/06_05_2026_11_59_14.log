@@ -1,0 +1,16 @@
+[ 2026-06-05 11:59:17,055 ] 30 root - INFO - Loading trained model
+[ 2026-06-05 11:59:17,061 ] 34 root - INFO - model loaded successfully
+[ 2026-06-05 11:59:17,061 ] 36 root - INFO - loading preprocessor
+[ 2026-06-05 11:59:17,063 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-05 11:59:17,063 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-05 11:59:17,063 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-05 11:59:17,063 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-05 11:59:17,063 ] 46 root - INFO - Prediction pipeline started
+[ 2026-06-05 11:59:17,082 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-05 11:59:17,082 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-05 11:59:17,082 ] 31 root - INFO - Loading trained model
+[ 2026-06-05 11:59:17,086 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-05 11:59:17,086 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-05 11:59:17,086 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-05 11:59:17,097 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-05 11:59:17,097 ] 78 root - INFO - Prediction completed successfully

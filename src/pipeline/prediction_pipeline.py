@@ -6,6 +6,8 @@ from src.components.shap_explainer import ShapExplainer
 
 from src.components.recommendation import Recommendation
 
+from src.monitoring.prediction_logger import Predictionlogger
+
 from src.utils.logger import logging
 from src.utils.exception import CustomException
 
@@ -30,6 +32,10 @@ class PredictionPipeline:
             Recommendation()
         )
 
+        self.prediction_logger = (
+            Predictionlogger()
+        )
+
     def run_pipeline(
         self,
         input_data: dict
@@ -49,8 +55,14 @@ class PredictionPipeline:
 
                 self.predictor
                 .predict_churn(
-                    input_data
+                input_data
                 )
+            )
+            
+
+            self.prediction_logger.log_prediction(
+                input_data=input_data,
+                prediction_result=prediction_result
             )
 
             logging.info(

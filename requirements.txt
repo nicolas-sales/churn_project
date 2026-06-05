@@ -16,3 +16,4 @@ mlflow
 streamlit
 plotly
 fastapi
+evidently

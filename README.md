@@ -570,6 +570,75 @@ Production API
 
 ---
 
+# Monitoring & Observability
+
+The project includes infrastructure and machine learning monitoring capabilities.
+
+### AWS CloudWatch
+
+CloudWatch is used to monitor the deployed ECS Fargate service.
+
+Tracked metrics include:
+
+- CPU Utilization
+- Memory Utilization
+- Running Tasks Count
+
+### SNS Email Alerts
+
+CloudWatch alarms are connected to Amazon SNS notifications.
+
+Email alerts are automatically sent when:
+
+- CPU utilization exceeds the defined threshold
+- Memory utilization exceeds the defined threshold
+- The number of running ECS tasks falls below the expected value
+
+### ML Monitoring
+
+Prediction requests are automatically logged into a production dataset.
+
+Each prediction stores:
+
+- Customer features
+- Churn probability
+- Predicted class
+- Risk level
+- Timestamp
+
+### Data Drift Detection
+
+Evidently AI is used to compare production data with the original training dataset.
+
+The generated drift report provides:
+
+- Feature distribution comparison
+- Drift detection statistics
+- Dataset drift summary
+- Per-feature drift analysis
+
+This allows continuous monitoring of data quality and model reliability after deployment.
+
+---
+
+## ML Monitoring
+
+The project includes data drift monitoring using Evidently AI.
+
+Production predictions are logged and compared against the training dataset.
+
+Features with significant distribution changes are automatically detected.
+
+![Drift Report](screenshots/drift1.png)
+
+![Drift Report](screenshots/drift2.png)
+
+![Drift Report](screenshots/drift3.png)
+
+![Drift Report](screenshots/drift4.png)
+
+---
+
 ## Example End-to-End Workflow
 
 The system performs the following steps:

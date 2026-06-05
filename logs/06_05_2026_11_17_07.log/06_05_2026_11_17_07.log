@@ -1,0 +1,29 @@
+[ 2026-06-05 11:17:12,124 ] 30 root - INFO - Loading trained model
+[ 2026-06-05 11:17:12,136 ] 34 root - INFO - model loaded successfully
+[ 2026-06-05 11:17:12,136 ] 36 root - INFO - loading preprocessor
+[ 2026-06-05 11:17:12,138 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-05 11:17:12,138 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-05 11:17:12,140 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-05 11:17:12,141 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-05 11:20:23,781 ] 30 root - INFO - Loading trained model
+[ 2026-06-05 11:20:23,797 ] 34 root - INFO - model loaded successfully
+[ 2026-06-05 11:20:23,799 ] 36 root - INFO - loading preprocessor
+[ 2026-06-05 11:20:23,803 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-05 11:20:23,803 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-05 11:20:23,803 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-05 11:20:23,806 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-05 11:20:23,806 ] 46 root - INFO - Prediction pipeline started
+[ 2026-06-05 11:20:23,806 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-05 11:20:23,824 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-05 11:20:23,824 ] 31 root - INFO - Loading trained model
+[ 2026-06-05 11:20:23,842 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-05 11:20:23,842 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-05 11:20:23,848 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-05 11:20:23,913 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-05 11:20:23,921 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-05 11:20:50,825 ] 23 root - INFO - Initialize Churn Agent
+[ 2026-06-05 11:20:52,534 ] 30 root - INFO - LM initialized successfully
+[ 2026-06-05 11:20:52,640 ] 77 root - INFO - Agent created successfully
+[ 2026-06-05 11:20:52,640 ] 87 root - INFO - Started customer analysis
+[ 2026-06-05 11:20:52,755 ] 1111 openai._base_client - INFO - Retrying request to /chat/completions in 0.390029 seconds
+[ 2026-06-05 11:20:53,161 ] 1111 openai._base_client - INFO - Retrying request to /chat/completions in 0.823523 seconds

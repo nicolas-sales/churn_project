@@ -1,0 +1,106 @@
+[ 2026-06-05 23:54:22,897 ] 30 root - INFO - Loading trained model
+[ 2026-06-05 23:54:22,904 ] 34 root - INFO - model loaded successfully
+[ 2026-06-05 23:54:22,904 ] 36 root - INFO - loading preprocessor
+[ 2026-06-05 23:54:22,906 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-05 23:54:22,906 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-05 23:54:22,906 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-05 23:54:22,906 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-05 23:54:45,764 ] 30 root - INFO - Loading trained model
+[ 2026-06-05 23:54:45,804 ] 34 root - INFO - model loaded successfully
+[ 2026-06-05 23:54:45,804 ] 36 root - INFO - loading preprocessor
+[ 2026-06-05 23:54:45,807 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-05 23:54:45,807 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-05 23:54:45,807 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-05 23:54:45,807 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-05 23:54:45,813 ] 46 root - INFO - Prediction pipeline started
+[ 2026-06-05 23:54:45,813 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-05 23:54:45,815 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-05 23:54:45,815 ] 31 root - INFO - Loading trained model
+[ 2026-06-05 23:54:45,825 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-05 23:54:45,825 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-05 23:54:45,831 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-05 23:54:45,843 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-05 23:54:45,850 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-05 23:54:45,926 ] 68 root - INFO - Prediction completed successfully
+[ 2026-06-05 23:54:45,926 ] 103 root - INFO - Starting SHAP explanation
+[ 2026-06-05 23:54:45,941 ] 253 root - INFO - SHAP explanation completed successfully
+[ 2026-06-05 23:54:45,941 ] 85 root - INFO - SHAP explanation completed successfully
+[ 2026-06-05 23:54:45,941 ] 19 root - INFO - Starting recommendation generation
+[ 2026-06-05 23:54:45,941 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-05 23:54:45,948 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-05 23:54:45,948 ] 31 root - INFO - Loading trained model
+[ 2026-06-05 23:54:45,961 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-05 23:54:45,961 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-05 23:54:45,964 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-05 23:54:45,977 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-05 23:54:45,983 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-05 23:54:45,983 ] 31 root - INFO - Churn_probability: 0.8407
+[ 2026-06-05 23:54:45,983 ] 172 root - INFO - Recommandations generated successfully
+[ 2026-06-05 23:54:45,983 ] 101 root - INFO - Recommendations generated successfully
+[ 2026-06-05 23:54:45,983 ] 121 root - INFO - Prediction pipeline completed successfully
+[ 2026-06-05 23:55:28,420 ] 30 root - INFO - Loading trained model
+[ 2026-06-05 23:55:28,427 ] 34 root - INFO - model loaded successfully
+[ 2026-06-05 23:55:28,427 ] 36 root - INFO - loading preprocessor
+[ 2026-06-05 23:55:28,435 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-05 23:55:28,435 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-05 23:55:28,435 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-05 23:55:28,435 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-05 23:55:28,435 ] 46 root - INFO - Prediction pipeline started
+[ 2026-06-05 23:55:28,435 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-05 23:55:28,435 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-05 23:55:28,435 ] 31 root - INFO - Loading trained model
+[ 2026-06-05 23:55:28,452 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-05 23:55:28,452 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-05 23:55:28,458 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-05 23:55:28,470 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-05 23:55:28,478 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-05 23:55:28,518 ] 68 root - INFO - Prediction completed successfully
+[ 2026-06-05 23:55:28,518 ] 103 root - INFO - Starting SHAP explanation
+[ 2026-06-05 23:55:28,536 ] 253 root - INFO - SHAP explanation completed successfully
+[ 2026-06-05 23:55:28,537 ] 85 root - INFO - SHAP explanation completed successfully
+[ 2026-06-05 23:55:28,537 ] 19 root - INFO - Starting recommendation generation
+[ 2026-06-05 23:55:28,537 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-05 23:55:28,537 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-05 23:55:28,537 ] 31 root - INFO - Loading trained model
+[ 2026-06-05 23:55:28,551 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-05 23:55:28,551 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-05 23:55:28,551 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-05 23:55:28,569 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-05 23:55:28,573 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-05 23:55:28,573 ] 31 root - INFO - Churn_probability: 0.0957
+[ 2026-06-05 23:55:28,573 ] 172 root - INFO - Recommandations generated successfully
+[ 2026-06-05 23:55:28,573 ] 101 root - INFO - Recommendations generated successfully
+[ 2026-06-05 23:55:28,573 ] 121 root - INFO - Prediction pipeline completed successfully
+[ 2026-06-05 23:56:01,963 ] 30 root - INFO - Loading trained model
+[ 2026-06-05 23:56:01,976 ] 34 root - INFO - model loaded successfully
+[ 2026-06-05 23:56:01,976 ] 36 root - INFO - loading preprocessor
+[ 2026-06-05 23:56:01,976 ] 40 root - INFO - preprocessor loaded successfully
+[ 2026-06-05 23:56:01,976 ] 48 root - INFO - Initializing SHAP explainer
+[ 2026-06-05 23:56:01,982 ] 70 root - INFO - Detected tree-based model
+[ 2026-06-05 23:56:01,982 ] 90 root - INFO - SHAP explainer initialized successfully
+[ 2026-06-05 23:56:01,982 ] 46 root - INFO - Prediction pipeline started
+[ 2026-06-05 23:56:01,982 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-05 23:56:01,982 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-05 23:56:01,982 ] 31 root - INFO - Loading trained model
+[ 2026-06-05 23:56:01,998 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-05 23:56:02,000 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-05 23:56:02,000 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-05 23:56:02,015 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-05 23:56:02,021 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-05 23:56:02,065 ] 68 root - INFO - Prediction completed successfully
+[ 2026-06-05 23:56:02,065 ] 103 root - INFO - Starting SHAP explanation
+[ 2026-06-05 23:56:02,086 ] 253 root - INFO - SHAP explanation completed successfully
+[ 2026-06-05 23:56:02,086 ] 85 root - INFO - SHAP explanation completed successfully
+[ 2026-06-05 23:56:02,086 ] 19 root - INFO - Starting recommendation generation
+[ 2026-06-05 23:56:02,086 ] 52 root - INFO - Starting churn prediction
+[ 2026-06-05 23:56:02,092 ] 58 root - INFO - Input converted to dataframe
+[ 2026-06-05 23:56:02,092 ] 31 root - INFO - Loading trained model
+[ 2026-06-05 23:56:02,100 ] 35 root - INFO - Model loaded successfully
+[ 2026-06-05 23:56:02,100 ] 37 root - INFO - Loading preprocessor
+[ 2026-06-05 23:56:02,110 ] 41 root - INFO - Preprocessor loaded successfully
+[ 2026-06-05 23:56:02,122 ] 68 root - INFO - Input data transformed successfully
+[ 2026-06-05 23:56:02,128 ] 78 root - INFO - Prediction completed successfully
+[ 2026-06-05 23:56:02,128 ] 31 root - INFO - Churn_probability: 0.5024
+[ 2026-06-05 23:56:02,128 ] 172 root - INFO - Recommandations generated successfully
+[ 2026-06-05 23:56:02,128 ] 101 root - INFO - Recommendations generated successfully
+[ 2026-06-05 23:56:02,128 ] 121 root - INFO - Prediction pipeline completed successfully
