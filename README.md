@@ -639,6 +639,16 @@ Features with significant distribution changes are automatically detected.
 
 ---
 
+## Future Improvements
+
+- Store prediction logs in Amazon S3
+- Automate Evidently report generation
+- Integrate Grafana dashboards
+- Add model retraining pipeline
+- Implement prediction drift monitoring
+
+---
+
 ## Example End-to-End Workflow
 
 The system performs the following steps:
