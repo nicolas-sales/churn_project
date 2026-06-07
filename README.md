@@ -470,58 +470,6 @@ docker run -p 8000:8000 churn-api
 
 ---
 
-## Technologies Used
-
-### Machine Learning
-
-- Scikit-learn
-- XGBoost
-
-### Explainability
-
-- SHAP
-
-### AI Agent Framework
-
-- OpenAI GPT-4o-mini
-- LangChain
-
-### Data Processing
-
-- Pandas
-- NumPy
-
-### Visualization
-
-- Matplotlib
-- Seaborn
-
-### Application
-
-- Streamlit
-- Plotly
-
-### Backend
-
-- FastAPI
-- Uvicorn
-
-### Containerization
-
-- Docker
-
-### Cloud & DevOps
-
-- Docker
-- GitHub Actions
-- Amazon ECR
-- Amazon ECS Fargate
-- AWS IAM
-- AWS VPC
-- Pytest
-
----
-
 ## CI/CD Pipeline
 
 A complete CI/CD pipeline was implemented using GitHub Actions and AWS services.
@@ -551,6 +499,8 @@ The deployment pipeline automatically:
 - Pulls the latest image from ECR
 - Launches a new Fargate task
 - Replaces the previous running version
+
+![ECS](screenshots/ECS.png)
 
 ### CI/CD Workflow
 
@@ -583,6 +533,8 @@ Tracked metrics include:
 - CPU Utilization
 - Memory Utilization
 - Running Tasks Count
+
+![CloudWatch](screenshots/CloudWatch.png)
 
 ### SNS Email Alerts
 
@@ -667,6 +619,58 @@ Example output:
 - Main Driver: Electronic Check payment method
 - Best Action: Switch to a one-year contract
 - Expected Reduction in Churn Probability: 5.05%
+
+---
+
+## Technologies Used
+
+### Machine Learning
+
+- Scikit-learn
+- XGBoost
+
+### Explainability
+
+- SHAP
+
+### AI Agent Framework
+
+- OpenAI GPT-4o-mini
+- LangChain
+
+### Data Processing
+
+- Pandas
+- NumPy
+
+### Visualization
+
+- Matplotlib
+- Seaborn
+
+### Application
+
+- Streamlit
+- Plotly
+
+### Backend
+
+- FastAPI
+- Uvicorn
+
+### Containerization
+
+- Docker
+
+### Cloud & DevOps
+
+- Docker
+- GitHub Actions
+- Amazon ECR
+- Amazon ECS Fargate
+- AWS IAM
+- AWS VPC
+- Pytest
 
 ---
 
